@@ -74,7 +74,7 @@ export default function Home() {
                         image={"/widget.png"}/>
                     <FeatureCard
                         title={"Privacy"}
-                        description={"All data is stored locally on your device to ensure privacy. Even with your data in iCloud, your data reminds encrypted and safe."}
+                        description={"All data is stored locally on your device to ensure privacy. Even with your data in iCloud, your data remains safe."}
                         image={"/privacy-perso.png"}
                         imageClassName={'max-w-[240px]'}
                     />
