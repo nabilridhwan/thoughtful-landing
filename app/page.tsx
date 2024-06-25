@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FeatureCard from "@/components/FeatureCard";
 
 const upcomingFeatures = [
     {
@@ -63,15 +64,20 @@ export default function Home() {
 
                 <div className={'grid grid-cols-1 md:grid-cols-3 gap-10 mt-10'}>
 
-                    <FeatureCard title={'Handcrafted Prompts'}
-                                 description={'Thoughtfully designed prompts to inspire daily reflections'}
-                                 image={'/prompts.png'}/>
-                    <FeatureCard title={"Widgets"}
-                                 description={"Visually appealing widgets that keep gratitude practices front and center on your home screen."}
-                                 image={"/widget.png"}/>
-                    <FeatureCard title={"Privacy"}
-                                 description={"All data is stored locally on your device to ensure privacy. Even with your data in iCloud, your data reminds encrypted and safe."}
-                                 image={"/privacy.png"}/>
+                    <FeatureCard
+                        title={'Handcrafted Prompts'}
+                        description={'Thoughtfully designed prompts to inspire daily reflections'}
+                        image={'/prompts-ios.png'}/>
+                    <FeatureCard
+                        title={"Widgets"}
+                        description={"Visually appealing widgets that keep gratitude practices front and center on your home screen."}
+                        image={"/widget.png"}/>
+                    <FeatureCard
+                        title={"Privacy"}
+                        description={"All data is stored locally on your device to ensure privacy. Even with your data in iCloud, your data reminds encrypted and safe."}
+                        image={"/privacy-perso.png"}
+                        imageClassName={'max-w-[240px]'}
+                    />
 
 
                 </div>
@@ -89,7 +95,7 @@ export default function Home() {
                         </span>
 
                                 {idx !== upcomingFeatures.length - 1 &&
-                                    <span className={'ml-2 text-black text-opacity-50'}>•</span>}
+                                    <span className={'ml-2 text-white text-opacity-50'}>•</span>}
                             </div>
                         ))}
                     </div>
@@ -123,11 +129,21 @@ export default function Home() {
             </section>
 
 
+            <section className={'text-center lg:mx-80 space-y-8 my-20 leading-loose'}>
+                <h1 className={'text-center text-4xl font-bold'}>Is the app free?</h1>
+
+                <p>
+                    While the core features are free, we offer additional Premium features available through a single
+                    in-app purchase, <span className={'font-bold'}>Thoughtful Powerpack</span>
+                </p>
+            </section>
+
+
             <section className={'text-center'}>
-                <div className={'border border-black/30 rounded-3xl p-10 space-y-5'}>
+                <div className={'bg-foreground border border-black/30 rounded-3xl p-10 space-y-5'}>
 
                     <h3 className={'font-bold text-3xl'}>Stay updated and show your interest</h3>
-                    <p className={'text-xl text-black text-opacity-50'}>
+                    <p className={'text-xl text-white text-opacity-50'}>
                         Thoughtful is not yet available on the App Store. Sign up to be the first to know when it
                         launches!
                     </p>
@@ -136,7 +152,7 @@ export default function Home() {
                         Click here
                     </a>
 
-                    <i className={'mt-8 text-black text-opacity-50 text-sm block'}>You&apos;ll be redirected to a
+                    <i className={'mt-8 text-white text-opacity-50 text-sm block'}>You&apos;ll be redirected to a
                         Typeform link</i>
 
                 </div>
@@ -144,34 +160,10 @@ export default function Home() {
             </section>
 
             <footer className={'mt-32 text-center'}>
-                Created by <a href={"https://github.com/nabilridhwan"}>Nabil Ridhwan</a>
+                Created by <a href={"https://nabilridhwan.com"}>Nabil Ridhwan</a>
             </footer>
 
         </main>
     );
 }
 
-interface FeatureCardProps {
-    title: string;
-    description: string;
-    image: string;
-}
-
-function FeatureCard({title, description, image}: FeatureCardProps) {
-    return (
-
-        <div className={'border border-black/10 rounded-3xl p-10 leading-loose'}>
-
-            <h3 className={'font-bold text-2xl mb-1'}>{title}</h3>
-            <p className={'text-xl text-black text-opacity-50'}>
-                {description}
-            </p>
-
-            <div className={'flex flex-col items-center w-full'}>
-                <img className={'mt-10'} src={image}/>
-            </div>
-        </div>
-
-
-    )
-}
